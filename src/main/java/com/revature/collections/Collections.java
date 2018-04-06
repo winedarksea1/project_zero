@@ -2,9 +2,11 @@ package com.revature.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeSet;
@@ -80,7 +82,22 @@ public class Collections {
 		
 		// TODO sort the HashMap
 		System.out.println("The HashMap " + theHashMap);
+		ArrayList<String> al = new ArrayList();
+		LinkedHashMap<String, String> lhm = new LinkedHashMap<>();
+		Iterator it = theHashMap.entrySet().iterator();
+		while(it.hasNext()) {
+			Map.Entry pair = (Map.Entry) it.next();
+			al.add((String) pair.getKey());
+			it.remove();
+		}
+		al.sort(null);
+		System.out.println("List after while loop: " + al);
+		for (String hero : al) {
+			lhm.put(hero, theHashMap.get(hero));
+		}
+		System.out.println("Linked Hash Map: " + lhm);
 		
+		// End of HashMap Sorting experiment
 		
 		System.out.println("theTreeSet is already sorted " + theTreeSet);
 		

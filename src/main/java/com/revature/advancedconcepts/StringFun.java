@@ -33,7 +33,11 @@ public class StringFun {
 		// request Garbage Collection
 		System.gc();
 		
-		// TODO create a Runtime object and note at least three methods
+		// create a Runtime object and note at least three methods
+		Runtime rt = Runtime.getRuntime();
+		System.out.println("Available Processors: " + rt.availableProcessors());
+		System.out.println("Free Memory: " + rt.freeMemory());
+		System.out.println("Total Memory: " + rt.totalMemory());
 	}
 	
 	public static int addTwoNumberStrings(String num1, String num2) {
